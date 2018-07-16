@@ -9,6 +9,7 @@ Example Playbook
     - hosts: servers
       roles:
          - role: hxpro.go
+           go_path: '$HOME/go'
 
 License
 -------

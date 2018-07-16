@@ -18,3 +18,13 @@
   package:
     name: golang
     state: present
+
+- name: Add GOPATH to .bashrc
+  blockinfile:
+    path: ~/.bashrc
+    marker: "# {mark} GOPATH"
+    block: |
+      GOPATH={{ go_path }}
+      export GOPATH
+      PATH="$PATH:$GOPATH/bin:}/bin"
+    insertbefore: export PATH
