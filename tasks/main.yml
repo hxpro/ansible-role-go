@@ -1,5 +1,20 @@
 ---
+- name: Go-Repo.io GPG key
+  rpm_key:
+    key: https://mirror.go-repo.io/centos/RPM-GPG-KEY-GO-REPO
+    state: present
+
+- name: Setup Go-Repo.io
+  yum_repository:
+    name: go-repo
+    file: go-repo
+    description: go-repo - CentOS
+    baseurl: https://mirror.go-repo.io/centos/$releasever/$basearch/
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: https://mirror.go-repo.io/centos/RPM-GPG-KEY-GO-REPO
+
 - name: Install golang
   package:
     name: golang
-    state: present  
+    state: present

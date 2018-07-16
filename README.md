@@ -1,7 +1,7 @@
 hxpro.go
 ========
 
-Install golang form repository
+Install golang form repository go-repo.io
 
 Example Playbook
 ----------------
